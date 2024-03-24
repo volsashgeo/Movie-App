@@ -1,0 +1,37 @@
+import React, { Component } from 'react';
+// import { format } from 'date-fns';
+
+import MovieListItem from '../movie-list-item';
+
+import './movie-list.css';
+
+let elements = [];
+export default class MovieList extends Component {
+  render() {
+    const { moviesFromServer } = this.props;
+    // const {id} = moviesFromServer
+    // console.log('moviesFromServer', id);
+
+    elements = moviesFromServer.map((movie) => {
+      const { id, title, releaseDate, description, genres, posterPath } = movie;
+
+      const currentMovie = {
+        id,
+        title,
+        releaseDate,
+        genres,
+        description,
+        posterPath,
+      };
+
+      return <MovieListItem currentMovie={currentMovie} key={id} />;
+    });
+
+    return (
+      <ul className="movie-list">
+        {elements}
+        {/* <MovieListItem moviesFromServer = {moviesFromServer}/> */}
+      </ul>
+    );
+  }
+}
