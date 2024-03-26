@@ -1,56 +1,52 @@
 * {
-    font-family: Inter;
-    font-weight: 400;
-    line-height: 28px;
-    font-size: 12px;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: 28px;
+  font-size: 12px;
 }
 
-
-
 .movie-list-item {
-    padding: 0;
-    max-width: 451px;
-    max-height: 279px;
-    /* border: 1px solid black; */
-    padding: 0 5px;
-    display: flex;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
-    margin: 0 36px 36px 0;
-
+  padding: 0;
+  max-width: 451px;
+  max-height: 279px;
+  /* border: 1px solid black; */
+  padding: 0 5px;
+  display: flex;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  margin: 0 36px 36px 0;
 }
 
 .movie-list-item__poster {
-    width: 183px;
-    height: 281px;
-    /* background-size: cover; */
+  width: 183px;
+  height: 281px;
+  /* background-size: cover; */
 }
 
 .movie-list-item__info {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .movie-list-item__title {
-    margin-top: 10px;
-    margin-bottom: 7px;
-    font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+  font-size: 20px;
 }
 
 .movie-list-item__release-date {
-    margin-top: 0;
-    margin-bottom: 9px;
-    color: rgba(130, 126, 126, 1);
-
+  margin-top: 0;
+  margin-bottom: 9px;
+  color: rgba(130, 126, 126, 1);
 }
 
 .movie-list-item__genre {
-    margin-top: 0;
-    margin-bottom: 7px;
-    line-height: 14.52px;
-    color: rgb(250, 8, 8);
+  margin-top: 0;
+  margin-bottom: 7px;
+  line-height: 14.52px;
+  color: rgb(250, 8, 8);
 }
 
 .movie-list-item__description {
-    margin-top: 0;
-    width: 228px;
-    height: 129px;
+  margin-top: 0;
+  width: 228px;
+  height: 129px;
 }

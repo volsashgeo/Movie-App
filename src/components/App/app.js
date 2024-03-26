@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DatePicker } from 'antd';
+import { DatePicker, Spin, Alert } from 'antd';
 
 import MovieService from '../../services/moovie-service';
 import MovieList from '../movie-list';
@@ -16,22 +16,49 @@ export default class App extends Component {
 
   state = {
     moviesFromServer: [],
+    loading: true,
+    error: false,
   };
 
-  updateMovie(title) {
-    this.movieService.getMovieByTitle(title).then((movies) => {
-      this.setState({
-        moviesFromServer: [...movies],
-      });
+  onError() {
+    this.setState({
+      error: true,
+      loading: false,
     });
   }
 
+  updateMovie(title) {
+    this.movieService
+      .getMovieByTitle(title)
+      .then((movies) => {
+        this.setState({
+          moviesFromServer: [...movies],
+          loading: false,
+        });
+      })
+      .catch(this.onError);
+  }
+
   render() {
-    const { moviesFromServer } = this.state;
-    console.log('App: moviesFromServer[0] ', moviesFromServer);
+    const { moviesFromServer, loading, error } = this.state;
+
+    const fullScreenLoading = loading ? <Spin fullscreen size="large" /> : null;
+    const errorMessage = error ? (
+      <Alert
+        message="Возникла ошибка, попробуйте перезагрузить страницу"
+        description="Error Description"
+        type="error"
+        closable
+        showIcon="true"
+      />
+    ) : null;
+
     return (
       <div>
-        <MovieList moviesFromServer={moviesFromServer} />
+        {errorMessage}
+        {fullScreenLoading}
+        <div style={{ textAlign: 'center' }}>{/* <Spin size="large" /> */}</div>
+        <MovieList moviesFromServer={moviesFromServer} loading={loading} error={error} />
         <DatePicker />
       </div>
     );

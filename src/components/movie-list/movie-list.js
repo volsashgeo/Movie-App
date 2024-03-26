@@ -8,7 +8,7 @@ import './movie-list.css';
 let elements = [];
 export default class MovieList extends Component {
   render() {
-    const { moviesFromServer } = this.props;
+    const { moviesFromServer, loading, error } = this.props;
     // const {id} = moviesFromServer
     // console.log('moviesFromServer', id);
 
@@ -24,7 +24,7 @@ export default class MovieList extends Component {
         posterPath,
       };
 
-      return <MovieListItem currentMovie={currentMovie} key={id} />;
+      return <MovieListItem currentMovie={currentMovie} loading={loading} error={error} key={id} />;
     });
 
     return (
