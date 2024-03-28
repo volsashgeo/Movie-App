@@ -2,10 +2,12 @@ import { format } from 'date-fns';
 
 const apiKey = '296b67c3cf00aaaa67f8d03f51e157be';
 
-function searchMovieByTitleUrl(title) {
-  return `https://api.themoviedb.org/3/search/movie?query=${title}&api_key=${apiKey}`;
+function searchMovieByTitleUrl(title, page = 1) {
+  return `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${title}&page=${page}`;
 }
 
+// let movieTitleTotalPages = null;
+// let movieTitleTotalResults = null;
 export default class MovieService {
   async getResource(url) {
     const res = await fetch(url);
@@ -18,9 +20,18 @@ export default class MovieService {
     return body;
   }
 
-  async getMovieByTitle(title) {
-    const res = await this.getResource(searchMovieByTitleUrl(title));
-    return res.results.map(this.transformData);
+  async getMovieByTitle(title, page) {
+    const res = await this.getResource(searchMovieByTitleUrl(title, page));
+
+    const movieTitleTotalPages = res.total_pages;
+    const movieTitleTotalResults = res.total_results;
+    const moviesByTitle = res.results.map(this.transformData);
+
+    return {
+      moviesByTitle,
+      movieTitleTotalResults,
+      movieTitleTotalPages,
+    };
   }
 
   transformData(movies) {

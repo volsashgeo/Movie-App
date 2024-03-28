@@ -31,7 +31,7 @@ export default class MovieListItem extends Component {
   }
 }
 
-function MovieListItemView({ currentMovie }) {
+function MovieListItemView({ currentMovie, loading }) {
   const { title, releaseDate, genres, posterPath, description } = currentMovie;
 
   function makeShortDescription(text, stringLength = 200) {
@@ -54,7 +54,7 @@ function MovieListItemView({ currentMovie }) {
 
   const posterUrl = posterPath === null ? noPosterImg : `https://image.tmdb.org/t/p/w500${posterPath}`;
 
-  return (
+  return !loading ? (
     <>
       <img className="movie-list-item__poster" src={posterUrl} alt={title} />
       <div className="movie-list-item__info">
@@ -68,5 +68,7 @@ function MovieListItemView({ currentMovie }) {
         <p className="movie-list-item__description">{shortDescription}</p>
       </div>
     </>
+  ) : (
+    <Spin />
   );
 }

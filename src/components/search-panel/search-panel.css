@@ -1,0 +1,9 @@
+.search-panel {
+    box-sizing: content-box;
+    width:85%;
+    margin: 0 36px 34px 36px;
+    font-size: 22px;
+    border:  1px solid rgba(217, 217, 217, 1);
+    padding-left: 12px;
+    border-radius: 5px;
+}

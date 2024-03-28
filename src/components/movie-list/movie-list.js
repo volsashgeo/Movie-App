@@ -9,8 +9,6 @@ let elements = [];
 export default class MovieList extends Component {
   render() {
     const { moviesFromServer, loading, error } = this.props;
-    // const {id} = moviesFromServer
-    // console.log('moviesFromServer', id);
 
     elements = moviesFromServer.map((movie) => {
       const { id, title, releaseDate, description, genres, posterPath } = movie;
@@ -27,11 +25,6 @@ export default class MovieList extends Component {
       return <MovieListItem currentMovie={currentMovie} loading={loading} error={error} key={id} />;
     });
 
-    return (
-      <ul className="movie-list">
-        {elements}
-        {/* <MovieListItem moviesFromServer = {moviesFromServer}/> */}
-      </ul>
-    );
+    return <ul className="movie-list">{elements}</ul>;
   }
 }

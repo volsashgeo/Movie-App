@@ -1,3 +1,14 @@
 .alert-fontsize {
-    font-size: 35px;
+  font-size: 35px;
+}
+
+.no-such-movie {
+  font-size: 22px;
+  margin: 0 35px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
