@@ -16,7 +16,7 @@ export default class MovieListItem extends Component {
   onRatingChange = (value) => {
     this.setState({ rating: value });
     this.addMovieRating(this.props.currentMovie.id, this.props.guestSessionId, value);
-    this.props.onGetAnyRating(this.state.rating);
+    this.props.onGetAnyRating(value);
   };
 
   addMovieRating(movieId, sessionId, ratingValue) {

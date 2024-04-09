@@ -22,6 +22,7 @@ function getAddRatingUrl(movieId, sessionId) {
 }
 
 // получить оцененные фильмы
+
 function getRatedMoviesUrl(sessionId) {
   return `https://api.themoviedb.org/3/guest_session/${sessionId}/rated/movies?api_key=${apiKey}`;
 }
@@ -111,6 +112,7 @@ export default class MovieService {
 
     const movieRatedTotalResults = res.total_results;
     const ratedMovies = res.results.map(this.transformData);
+
     return {
       ratedMovies,
       movieRatedTotalResults,

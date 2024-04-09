@@ -1,8 +1,9 @@
 * {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 12px;
 }
 
 .movie-list-item {
@@ -15,14 +16,13 @@
   margin: 0 36px 36px 0;
 }
 
-
 .movie-list-item__poster {
   width: 183px;
   height: 281px;
   background-size: cover;
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__poster {
     position: absolute;
     width: 60px;
@@ -31,7 +31,6 @@
     top: 6px;
     background-size: cover;
   }
-
 }
 
 .movie-list-item__info {
@@ -39,7 +38,7 @@
   position: relative;
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__info {
     margin-left: 0;
     position: relative;
@@ -51,7 +50,7 @@
   position: relative;
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__title {
     margin-left: 83px;
     display: flex;
@@ -66,12 +65,11 @@
   margin-right: 45px;
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__text {
     margin-top: 4px;
   }
 }
-
 
 .movie-list-item__rating {
   box-sizing: border-box;
@@ -89,7 +87,7 @@
   font-size: 14px;
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__rating {
     top: 4px;
   }
@@ -101,7 +99,7 @@
   color: rgba(130, 126, 126, 1);
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__release-date {
     margin-left: 83px;
   }
@@ -112,7 +110,7 @@
   flex-wrap: wrap;
 }
 
-@media (max-width:520px) {
+@media (max-width: 520px) {
   .movie-list-item__genres {
     margin-left: 83px;
   }
@@ -134,7 +132,6 @@
   margin-left: 10px;
   margin-right: 10px;
   line-height: 22px;
-
 }
 
 .movie-list-item__rate {

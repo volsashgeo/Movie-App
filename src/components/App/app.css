@@ -16,13 +16,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom:17px;
+  margin-bottom: 17px;
 }
 
 .tabs__top .ant-tabs-tab-btn {
   font-size: 22px;
- }
+}
 
- .custom-tabs .ant-tabs-tab-btn{
+.custom-tabs .ant-tabs-tab-btn {
   font-size: 22px;
- }
+}
