@@ -1,35 +1,98 @@
 * {
-  font-family: Inter;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
-  line-height: 28px;
-  font-size: 12px;
+  font-style: normal;
 }
 
 .movie-list-item {
+  position: relative;
   padding: 0;
-  max-width: 451px;
-  max-height: 279px;
-  /* border: 1px solid black; */
-  padding: 0 5px;
+  width: 451px;
+  height: 279px;
   display: flex;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
   margin: 0 36px 36px 0;
 }
 
+
 .movie-list-item__poster {
   width: 183px;
   height: 281px;
-  /* background-size: cover; */
+  background-size: cover;
+}
+
+@media (max-width:520px) {
+  .movie-list-item__poster {
+    position: absolute;
+    width: 60px;
+    height: 91px;
+    left: 10px;
+    top: 6px;
+    background-size: cover;
+  }
+
 }
 
 .movie-list-item__info {
   margin-left: 20px;
+  position: relative;
+}
+
+@media (max-width:520px) {
+  .movie-list-item__info {
+    margin-left: 0;
+    position: relative;
+  }
 }
 
 .movie-list-item__title {
+  display: flex;
+  position: relative;
+}
+
+@media (max-width:520px) {
+  .movie-list-item__title {
+    margin-left: 83px;
+    display: flex;
+    position: relative;
+  }
+}
+
+.movie-list-item__text {
   margin-top: 10px;
   margin-bottom: 7px;
   font-size: 20px;
+  margin-right: 45px;
+}
+
+@media (max-width:520px) {
+  .movie-list-item__text {
+    margin-top: 4px;
+  }
+}
+
+
+.movie-list-item__rating {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 9px;
+  top: 9px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(233, 209, 0, 1);
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width:520px) {
+  .movie-list-item__rating {
+    top: 4px;
+  }
 }
 
 .movie-list-item__release-date {
@@ -38,15 +101,49 @@
   color: rgba(130, 126, 126, 1);
 }
 
+@media (max-width:520px) {
+  .movie-list-item__release-date {
+    margin-left: 83px;
+  }
+}
+
+.movie-list-item__genres {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width:520px) {
+  .movie-list-item__genres {
+    margin-left: 83px;
+  }
+}
+
 .movie-list-item__genre {
-  margin-top: 0;
   margin-bottom: 7px;
+  margin-top: 0;
   line-height: 14.52px;
-  color: rgb(250, 8, 8);
+  color: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(217, 217, 217, 1);
+  border-radius: 2px;
+  padding: 2px 5px;
+  margin-right: 8px;
 }
 
 .movie-list-item__description {
   margin-top: 0;
-  width: 228px;
-  height: 129px;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 22px;
+
+}
+
+.movie-list-item__rate {
+  position: absolute;
+  bottom: 0;
+  right: 7px;
+}
+
+.movie-list-item__rate .ant-rate-star {
+  font-size: 15px;
+  margin-bottom: 10px;
 }
