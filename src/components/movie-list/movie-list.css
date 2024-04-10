@@ -1,4 +1,7 @@
 .movie-list {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,454px);
+  gap: 36px;
+  justify-content: space-around;
 }

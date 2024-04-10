@@ -13,7 +13,13 @@
   height: 279px;
   display: flex;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
-  margin: 0 36px 36px 0;
+}
+
+@media (max-width: 520px) {
+  .movie-list-item {
+    width: 388px;
+    height: 245px;
+  }
 }
 
 .movie-list-item__poster {
@@ -128,10 +134,11 @@
 }
 
 .movie-list-item__description {
-  margin-top: 0;
+  margin-top: 15px;
   margin-left: 10px;
   margin-right: 10px;
   line-height: 22px;
+  font-size: 12px;
 }
 
 .movie-list-item__rate {
@@ -141,6 +148,9 @@
 }
 
 .movie-list-item__rate .ant-rate-star {
-  font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.movie-list-item__rate .ant-rate-star svg {
+  font-size: 16px;
 }
