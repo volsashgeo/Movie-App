@@ -9,16 +9,16 @@
 .movie-list-item {
   position: relative;
   padding: 0;
-  width: 451px;
-  height: 279px;
+  min-width: 451px;
+  min-height: 279px;
   display: flex;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 520px) {
   .movie-list-item {
-    width: 388px;
-    height: 245px;
+    min-width: 388px;
+    min-height: 245px;
   }
 }
 
